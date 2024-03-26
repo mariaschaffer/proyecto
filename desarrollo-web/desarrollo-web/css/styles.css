@@ -1,0 +1,650 @@
+/*w1920px
+16px = 1rem
+62.5% = 1rem = 10px
+rem - para tipografia o medida, html como base 16px
+em - contenedor como base*/
+
+/* Flexbox para la botonera y lo que va en el header, grid para el maquetado general de la página.*/
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /*border: 1px solid red;*/
+}
+
+
+/* HEADER */
+header {
+    display: flex; /* para el posicionamiento de sus hijos */
+    flex-direction: row; /* para que los hijos se vean en fila */
+    justify-content: space-between; /* para que sus hijos se esparsan por el espacio */ 
+    align-items: center; /* para que los hijos queden centrados verticalmente */
+    background-color: white;
+    width: 100%;
+    height: 75px;
+    position: sticky; /* junto con el top, para que es header se siga viendo cuando hacemos scroll vertical */
+    top: 0;
+}
+
+.botonera {
+    display: flex;
+    list-style: none; /* para sacarle los puntos de lista que vienen por default */ 
+    gap: 1rem; /* el espacio entre sus hijos, junto con el margin */
+    margin: 0 1.5rem;
+}
+
+li {
+    background-color: black;
+    width: 120px;
+    height: 30px;
+    text-align: center;
+    padding: 6px; 
+}
+
+a {
+    font-size: 1rem;
+    color: white;
+    text-decoration: none; /* para sacarle el subrayado que viene por default  */
+}
+
+#marea {
+    font-family: "Playfair Display SC", serif;
+    font-size: 2.5rem;
+    padding: 0 1rem;
+    width: 100px;
+    height: 60px;
+}
+
+
+/*FOOTER*/
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    width: 100%;
+    height: 120px;
+}
+
+h3 {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    color: black;
+    font-size: 1.2rem;
+    margin-bottom: 0.7rem;
+}
+
+.psection {
+    color: black;
+    font-size: 0.7rem;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.seguinos {
+    margin-right: 1.5rem;
+}
+
+.seguinos img {
+    width: 27px;
+    height: 27px;
+}
+
+.atencion {
+    margin-left: 1.5rem;
+}
+
+
+/* BODY */
+body {
+    background-image: url("../assets/img/oceano.jpeg");
+    background-position: center;
+    background-size: cover;
+}
+
+
+/* HOME */
+.mainIndex {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "modelo-1 under"
+    ".        modelo-2";
+}
+
+.modelo-1 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Para que no sse deformen las imagenes */
+    grid-area: modelo-1;
+}
+
+.modelo-2 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    grid-area: modelo-2;
+}
+
+.under {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    color: red;
+    font-size: 2.5rem;
+    text-align: center;
+    align-self: center;
+    font-style: italic;
+    font-weight: bold;
+    text-shadow: 4px 4px rgba(0, 0, 0, 0.700);
+    grid-area: under;
+}
+
+
+/* SHOP */
+.mainShop {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "swimwear flores"
+    "naranjas summerwear";
+}
+
+.flores {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    grid-area: flores;
+}
+
+.naranjas {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    grid-area: naranjas;
+}
+
+.pSwim {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
+    text-shadow: 4px 4px rgba(0, 0, 0, 0.700);
+    grid-area: swimwear;
+    padding: 220px 0;
+}
+
+.aSwim {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    color: white;
+    font-size: 2.5rem;
+}
+
+.pSummer {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
+    text-shadow: 4px 4px rgba(0, 0, 0, 0.700);
+    grid-area: summerwear;
+    padding: 220px 0;
+}
+
+.aSummer {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    color: white;
+    font-size: 2.5rem;
+}
+
+
+/* SWIMWEAR */
+.mainSwim {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: repeat(4 1fr);
+    grid-template-rows: 1fr 0.2fr 1fr 0.2fr;
+    grid-template-areas: 
+    "imgSwim-1 imgSwim-2 imgSwim-3 imgSwim-4"
+    "p-1 p-2 p-3 p-4"
+    "imgSwim-5 imgSwim-6 imgSwim-7 imgSwim-8"
+    "p-5 p-6 p-7 p-8";
+
+    text-align: center;
+    color: white;
+}
+
+.imgSwim-1 {
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    padding-left: 1rem;
+    object-fit: cover;
+    grid-area: imgSwim-1;
+}
+
+.p-1 {
+    grid-area: p-1;
+}
+
+.imgSwim-2 {
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    object-fit: cover;
+    grid-area: imgSwim-2;
+}
+
+.p-2 {
+    grid-area: p-2;
+}
+
+.imgSwim-3 {
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    object-fit: cover;
+    grid-area: imgSwim-3;
+}
+
+.p-3 {
+    grid-area: p-3;
+}
+
+.imgSwim-4 {
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+    object-fit: cover;
+    grid-area: imgSwim-4;
+}
+
+.p-4 {
+    grid-area: p-4;
+}
+
+.imgSwim-5 {
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+    object-fit: cover;
+    grid-area: imgSwim-5;
+}
+
+.p-5 {
+    grid-area: p-5;
+}
+
+.imgSwim-6 {
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    padding-bottom: 1rem;
+    object-fit: cover;
+    grid-area: imgSwim-6;
+}
+
+.p-6 {
+    grid-area: p-6;
+}
+
+.imgSwim-7 {
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    padding-bottom: 1rem;
+    object-fit: cover;
+    grid-area: imgSwim-7;
+}
+
+.p-7 {
+    grid-area: p-7;
+}
+
+.imgSwim-8 {
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+    object-fit: cover;
+    grid-area: imgSwim-8;
+}
+
+.p-8 {
+    grid-area: p-8;
+}
+
+/*SUMMERWEAR*/
+.mainSummer{
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: repeat(4 1fr);
+    grid-template-rows: 1fr 0.2fr 1fr 0.2fr;
+    grid-template-areas: 
+    "imgSummer-1 imgSummer-2 imgSummer-3 imgSummer-4"
+    "precio-1 precio-2 precio-3 precio-4"
+    "imgSummer-5 imgSummer-6 imgSummer-7 imgSummer-8"
+    "precio-5 precio-6 precio-7 precio-8";
+
+    text-align: center;
+    color: white;
+}
+
+.imgSummer-1 {
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    padding-left: 1rem;
+    object-fit: cover;
+    grid-area: imgSummer-1;
+}
+
+.precio-1 {
+    grid-area: precio-1;
+}
+
+.imgSummer-2 {
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    padding-left: 1rem;
+    object-fit: cover;
+    grid-area: imgSummer-2;
+}
+
+.precio-2 {
+    grid-area: precio-2;
+}
+
+.imgSummer-3 {
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    padding-left: 1rem;
+    object-fit: cover;
+    grid-area: imgSummer-3;
+}
+
+.precio-3 {
+    grid-area: precio-3;
+}
+
+.imgSummer-4 {
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    padding-left: 1rem;
+    object-fit: cover;
+    grid-area: imgSummer-4;
+}
+
+.precio-4 {
+    grid-area: precio-4;
+}
+
+.imgSummer-5 {
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    padding-left: 1rem;
+    object-fit: cover;
+    grid-area: imgSummer-5;
+}
+
+.precio-5 {
+    grid-area: precio-5;
+}
+
+.imgSummer-6 {
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    padding-left: 1rem;
+    object-fit: cover;
+    grid-area: imgSummer-6;
+}
+
+.precio-6 {
+    grid-area: precio-6;
+}
+
+.imgSummer-7 {
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    padding-left: 1rem;
+    object-fit: cover;
+    grid-area: imgSummer-7;
+}
+
+.precio-7 {
+    grid-area: precio-7;
+}
+
+.imgSummer-8 {
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    padding-left: 1rem;
+    object-fit: cover;
+    grid-area: imgSummer-8;
+}
+
+.precio-8 {
+    grid-area: precio-8;
+}
+
+
+/* INFO */
+.mainInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sectionInfo {
+    width: 90%;
+    height: 90%;
+    background-color: rgba(255, 255, 255, 0.300);
+    margin: 16px 16px 0 16px;
+    padding-top: 2px;
+}
+
+.tituloInfo {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    color: red;
+    font-size: 1rem;
+    text-align: center;
+    align-self: center;
+    font-weight: bold;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.700);
+    margin: 3px;
+}
+
+.subtituloInfo {
+    color: white;
+    font-size: 1rem;
+    margin: 9px 0 0 12px;
+}
+
+.pInfo {
+    color: white;
+    margin: 12px;
+}
+
+.sectionInfo-2 {
+    width: 90%;
+    height: 90%;
+    background-color: rgba(255, 255, 255, 0.300);
+    margin: 48px 16px 0 16px;
+    padding: 2px;
+}
+
+.sectionInfo-3 {
+    width: 90%;
+    height: 90%;
+    background-color: rgba(255, 255, 255, 0.300);
+    margin: 16px 16px 48px 16px;
+    padding: 2px;
+}
+
+
+
+
+
+/* 1pc 2t 3m */
+/* @media (max-width: 1024px) {} */
+
+/* TABLET */
+@media (max-width: 768px) {
+    /* HEADER */
+    header {
+        justify-content: space-around;
+    }
+
+    /* MAIN HOME */
+    .under {
+        font-size: 1.8rem;
+        text-shadow: 2px 2px rgba(0, 0, 0, 0.700);
+    }
+
+    /* MAIN SHOP */
+    .swimwear {
+        font-size: 1.8rem;
+        text-shadow: 2px 2px rgba(0, 0, 0, 0.700);
+    }
+
+    .summerwear {
+        font-size: 1.8rem;
+        text-shadow: 2px 2px rgba(0, 0, 0, 0.700);
+    }
+
+    /* FOOTER */
+    h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .psection {
+        font-size: 0.6rem;
+    }
+}
+
+/* MOVIL */
+@media (max-width: 320px) {
+    /* HEADER */
+    header {
+        flex-direction: column;
+        height: 100px;
+        justify-content: space-around;
+    }
+
+    .botonera {
+        gap: 0 1rem;
+        margin: 0;
+    }
+    
+    li {
+        width: 80px;
+        height: 30px;
+    }
+    
+    #marea {
+        font-size: 2.3rem;
+        padding: 0;
+    }
+
+    /* MAIN HOME */
+    .mainIndex {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .under {
+        font-size: 1rem;
+        text-shadow: 1px 1px rgba(0, 0, 0, 0.700);
+        padding: 50px 0;
+    }
+
+    /* MAIN SHOP */
+    .mainShop {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .pSwim {
+        padding: 100px 0;
+    }
+
+    .aSwim {
+        font-size: 1rem;
+        text-shadow: 1px 1px rgba(0, 0, 0, 0.700);
+    }
+
+    .pSummer {
+        padding: 100px 0;
+    }
+
+    .aSummer {
+        font-size: 1rem;
+        text-shadow: 1px 1px rgba(0, 0, 0, 0.700);
+    }
+
+    .flores {
+        height: 230px;
+    }
+
+    .naranjas {
+        height: 230px;
+    }
+
+    /* FOOTER */
+    footer {
+        flex-direction: column;
+        height: 150px;
+    }
+    
+    h3 {
+        font-size: 0.8rem;
+        margin-bottom: 0;
+    }
+    
+    .psection {
+        font-size: 0.5rem;
+        text-align: center;
+    }
+    
+    .seguinos {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+    
+    .seguinos img {
+        width: 15px;
+        height: 15px;
+    }
+    
+    .atencion {
+        margin-left: 0;
+        margin-top: 0.5rem;
+    }
+}
